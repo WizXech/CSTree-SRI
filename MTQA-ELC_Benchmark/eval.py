@@ -82,9 +82,9 @@ if __name__ == '__main__':
     args = parse_args()
 
     original_dataset = {}
-    for file in os.listdir("./original_data"):
+    for file in os.listdir("./dataset"):
         if file.endswith(".jsonl"):
-            with jsonlines.open(os.path.join("./original_data", file), "r") as reader:
+            with jsonlines.open(os.path.join("./dataset", file), "r") as reader:
                 original_dataset[file.split(".")[0]] = [line for line in reader]
             
     for shuffled_choice in ["shuffled", "unshuffled"]:
